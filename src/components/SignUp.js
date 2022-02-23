@@ -6,11 +6,8 @@ import {
     FormControlLabel,
     Avatar,
     Checkbox,
-    Link,
     Grid,
-    Box,
     Typography,
-    Container,
     Paper,
     Radio,
     RadioGroup,
@@ -20,18 +17,18 @@ import {
 
 const SignUp = () => {
     const paperStyle = {
-        padding: '30px 20px',
+        padding: 20,
+        height: '70vh',
         width: 300,
-        margin: '20px auto'
     }
     return (
         <Grid>
-            <Paper elevation={20} style={paperStyle}>
+            <Paper elevation={10} style={paperStyle}>
                 <Grid align='center'>
                     <Avatar sx={{ bgcolor: '#1bbd7e' }}>
                         <AddCircleOutlineOutlinedIcon />
                     </Avatar>
-                    <h2 style={{ margin: 0 }}>Sign Up</h2>
+                    <Typography component="h2" variant="h5">Sign Up</Typography>
                     <Typography variant='caption'>Please fill this form to create an account!</Typography>
                 </Grid>
                 <form>

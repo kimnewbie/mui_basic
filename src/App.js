@@ -1,11 +1,10 @@
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
+import SignInOutContainer from "./containers";
+import './App.css';
 
 const App = () => {
   return (
     <div className="App">
-      {/* <SignIn /> */}
-      <SignUp />
+      <SignInOutContainer />
     </div>
   );
 }
