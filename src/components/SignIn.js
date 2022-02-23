@@ -44,19 +44,19 @@ const SignIn = () => {
                         margin="normal" // 위에 간격 주기
                         label='Email Address'
                         placeholder='Enter your Email Address'
-                        name="email"
-                        variant="standard"
-                        autoComplete="email" // 커서 기본 이동 
+                        name='email'
+                        variant='standard'
+                        autoComplete='email' // 커서 기본 이동 
                     />
                     <TextField
                         required
                         fullWidth
-                        margin="normal"
+                        margin='normal'
                         label='Password'
                         placeholder='Enter your password'
                         type='password' // 보이지 않게
-                        name="password"
-                        variant="standard"
+                        name='password'
+                        variant='standard'
                         autoComplete='current-password'
                     />
                     <FormControlLabel // lable을 클릭해도 checkbox 선택
