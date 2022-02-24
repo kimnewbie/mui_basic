@@ -1,10 +1,10 @@
-import SignInOutContainer from "./containers";
 import './App.css';
+import SideMenu from "./codAffection/SideMenu";
 
 const App = () => {
   return (
     <div className="App">
-      <SignInOutContainer />
+      <SideMenu />
     </div>
   );
 }
