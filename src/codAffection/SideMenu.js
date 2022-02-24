@@ -1,27 +1,26 @@
 import React from 'react';
-import { makeStyles, withStyles } from '@mui/styles';
+import { withStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
-    side_menu: {
+const style = {
+    sideMenu: {
         display: 'flex',
         flexDirection: 'column',
         position: 'absolute',
         left: '0px',
         width: '320px',
-        height: '100 %',
+        height: '100%',
         backgroundColor: '#253053',
     }
-})
+}
 
-const SideMenu = () => {
-    const classes = useStyles();
-    console.log(classes);
+const SideMenu = (props) => {
+    const { classes } = props;
 
     return (
-        <div className={classes.side_menu}>
+        <div className={classes.sideMenu}>
 
-        </div>
+        </div >
     );
 };
 
-export default SideMenu;
+export default withStyles(style)(SideMenu);
