@@ -4,8 +4,8 @@ import {
     Tab,
     Typography,
     Box,
+    Container,
 } from '@mui/material';
-import PropTypes from 'prop-types';
 import SignIn from '../components/SignIn';
 import SignUp from '../components/SignUp';
 
@@ -21,7 +21,7 @@ const TabPanel = (props) => {
             {...other}
         >
             {value === index && (
-                <Box sx={{ p: 3 }}>
+                <Box>
                     <Typography>{children}</Typography>
                 </Box>
             )}
@@ -37,7 +37,7 @@ const a11yProps = (index) => {
 }
 
 const SignInOutContainer = () => {
-    const [tabsValue, setTabsValue] = useState();
+    const [tabsValue, setTabsValue] = useState(0);
 
     const onChangeTabsValue = (event, tabsValue) => {
         setTabsValue(tabsValue);

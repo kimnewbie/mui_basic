@@ -61,7 +61,6 @@ const SignIn = ({ onChangeTabsValue }) => {
                         {
                             (props) => (
                                 <Form>
-                                    {console.log(props)}
                                     <Field as={TextField}
                                         required
                                         fullWidth
