@@ -23,7 +23,7 @@ const SignIn = ({ onChangeTabsValue }) => {
     }
     const paperStyle = {
         padding: 20,
-        height: '70vh',
+        height: '100vh',
         width: 300,
     }
     const validationSchema = Yup.object().shape({

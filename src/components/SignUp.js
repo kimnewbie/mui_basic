@@ -18,7 +18,7 @@ import {
 const SignUp = () => {
     const paperStyle = {
         padding: 20,
-        height: '70vh',
+        height: '100vh',
         width: 300,
     }
     return (
