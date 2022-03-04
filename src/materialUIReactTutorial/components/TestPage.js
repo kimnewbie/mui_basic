@@ -1,20 +1,40 @@
 import React, { useState } from 'react';
+import 'fontsource-roboto';
 import { makeStyles } from '@mui/styles';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField, Typography } from '@mui/material';
-import { Delete, Favorite, FavoriteBorder, Gradient, Save } from '@mui/icons-material';
 import { orange, red, green, deepPurple, purple } from '@mui/material/colors';
-import 'fontsource-roboto';
+import { Delete, Favorite, FavoriteBorder, Gradient, Save, MenuOutlined } from '@mui/icons-material';
+import {
+    Button,
+    ButtonGroup,
+    Checkbox,
+    FormControlLabel,
+    TextField,
+    Typography,
+    Container,
+    Paper,
+    Grid,
+    AppBar,
+    Toolbar,
+    IconButton,
+} from '@mui/material';
 
 const theme = createTheme({
-    palette: {
-        primary: {
-            main: deepPurple[500],
-        },
-        secondary: {
-            main: purple[500]
+    // palette: {
+    //     primary: {
+    //         main: deepPurple[500],
+    //     },
+    //     secondary: {
+    //         main: purple[500]
+    //     }
+    // },
+    typography: {
+        h2: {
+            fontSize: 36,
+            fontWeight: 'bold',
+            // backgroundColor: '#333'
         }
-    },
+    }
 });
 
 const useStyles = makeStyles({
@@ -24,6 +44,7 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         gap: 10,
         alignItems: 'center',
+        border: '1px solid #333'
     },
     btn_group: {
         display: 'flex',
@@ -70,46 +91,80 @@ const TestPage = () => {
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
-            <div className={classes.root}>
-                <>
-                    <ButtonStyled />
-                </>
-                <>
-                    <CheckboxExample />
-                </>
-                <>
-                    <TextField
-                        variant='outlined' //'filled' | 'outlined' | 'standard'
-                        color='secondary'
-                        type='email' // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
-                        label='email' // placeholder에 있다가 포커스되면 상단으로 이동
-                        // value='youjinkim@test.com'
-                        placeholder='youjinkim@test.com' // 라벨이 위로 올라가면 보임
-                    />
-                </>
-                <>
-                    <ButtonGroup
-                        variant='contained'
-                        size='large'
-                        className={classes.btn_group}
-                    >
-                        <Button
-                            // disabled
-                            // endIcon={<MusicNoteOutlined />}
-                            startIcon={<Save />}
-                            color='primary'
-                        >
-                            Save
-                        </Button>
-                        <Button
-                            startIcon={<Delete />}
+            <Container>{/* padding이 생김 */}
+                <div className={classes.root}>
+                    <AppBar color='secondary'>
+                        <Toolbar>
+                            <IconButton>
+                                <MenuOutlined />
+                            </IconButton>
+                            <Typography variant='h6'>
+                                MUI Theming
+                            </Typography>
+                            <Button style={{ background: '#fff' }}>
+                                LogIn
+                            </Button>
+                        </Toolbar>
+                    </AppBar>
+                    <Typography variant='h2' component='div'>
+                        Practice MUI Library
+                    </Typography>
+                    <Typography variant='subtitle1'>
+                        Learn how to use components of MUI
+                    </Typography>
+                    <>
+                        <ButtonStyled />
+                    </>
+                    <>
+                        <Grid container spacing={6} justifyContent='center'>
+                            <Grid item xs={3} sm={6}> {/* sm은 한줄이되 비율이 6 */}
+                                <Paper style={{ background: '#1976d2', height: 75, width: '100%' }} />
+                            </Grid>
+                            <Grid item xs={3} sm={6}>
+                                <Paper style={{ background: '#1976d2', height: 75, width: '100%' }} />
+                            </Grid>
+                            <Grid item xs={3} sm={6}>
+                                <Paper style={{ background: '#1976d2', height: 75, width: '100%' }} />
+                            </Grid>
+                        </Grid>
+                    </>
+                    <>
+                        <CheckboxExample />
+                    </>
+                    <>
+                        <TextField
+                            variant='outlined' //'filled' | 'outlined' | 'standard'
                             color='secondary'
+                            type='email' // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
+                            label='email' // placeholder에 있다가 포커스되면 상단으로 이동
+                            // value='youjinkim@test.com'
+                            placeholder='youjinkim@test.com' // 라벨이 위로 올라가면 보임
+                        />
+                    </>
+                    <>
+                        <ButtonGroup
+                            variant='contained'
+                            size='large'
+                            className={classes.btn_group}
                         >
-                            Discard
-                        </Button>
-                    </ButtonGroup>
-                </>
-            </div>
+                            <Button
+                                // disabled
+                                // endIcon={<MusicNoteOutlined />}
+                                startIcon={<Save />}
+                                color='primary'
+                            >
+                                Save
+                            </Button>
+                            <Button
+                                startIcon={<Delete />}
+                                color='secondary'
+                            >
+                                Discard
+                            </Button>
+                        </ButtonGroup>
+                    </>
+                </div>
+            </Container>
         </ThemeProvider>
     );
 };
