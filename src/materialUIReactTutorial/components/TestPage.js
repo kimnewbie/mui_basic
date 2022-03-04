@@ -1,9 +1,21 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@mui/styles';
-import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Button, ButtonGroup, Checkbox, FormControlLabel, TextField, Typography } from '@mui/material';
 import { Delete, Favorite, FavoriteBorder, Gradient, Save } from '@mui/icons-material';
-import { red } from '@mui/material/colors';
-import { display } from '@mui/system';
+import { orange, red, green, deepPurple, purple } from '@mui/material/colors';
+import 'fontsource-roboto';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: deepPurple[500],
+        },
+        secondary: {
+            main: purple[500]
+        }
+    },
+});
 
 const useStyles = makeStyles({
     root: {
@@ -57,46 +69,48 @@ const CheckboxExample = () => {
 const TestPage = () => {
     const classes = useStyles();
     return (
-        <div className={classes.root}>
-            <>
-                <ButtonStyled />
-            </>
-            <>
-                <CheckboxExample />
-            </>
-            <>
-                <TextField
-                    variant='outlined' //'filled' | 'outlined' | 'standard'
-                    color='secondary'
-                    type='email' // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
-                    label='email' // placeholder에 있다가 포커스되면 상단으로 이동
-                    // value='youjinkim@test.com'
-                    placeholder='youjinkim@test.com' // 라벨이 위로 올라가면 보임
-                />
-            </>
-            <>
-                <ButtonGroup
-                    variant='contained'
-                    size='large'
-                    className={classes.btn_group}
-                >
-                    <Button
-                        // disabled
-                        // endIcon={<MusicNoteOutlined />}
-                        startIcon={<Save />}
-                        color='primary'
-                    >
-                        Save
-                    </Button>
-                    <Button
-                        startIcon={<Delete />}
+        <ThemeProvider theme={theme}>
+            <div className={classes.root}>
+                <>
+                    <ButtonStyled />
+                </>
+                <>
+                    <CheckboxExample />
+                </>
+                <>
+                    <TextField
+                        variant='outlined' //'filled' | 'outlined' | 'standard'
                         color='secondary'
+                        type='email' // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types
+                        label='email' // placeholder에 있다가 포커스되면 상단으로 이동
+                        // value='youjinkim@test.com'
+                        placeholder='youjinkim@test.com' // 라벨이 위로 올라가면 보임
+                    />
+                </>
+                <>
+                    <ButtonGroup
+                        variant='contained'
+                        size='large'
+                        className={classes.btn_group}
                     >
-                        Discard
-                    </Button>
-                </ButtonGroup>
-            </>
-        </div>
+                        <Button
+                            // disabled
+                            // endIcon={<MusicNoteOutlined />}
+                            startIcon={<Save />}
+                            color='primary'
+                        >
+                            Save
+                        </Button>
+                        <Button
+                            startIcon={<Delete />}
+                            color='secondary'
+                        >
+                            Discard
+                        </Button>
+                    </ButtonGroup>
+                </>
+            </div>
+        </ThemeProvider>
     );
 };
 
