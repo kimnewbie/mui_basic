@@ -58,6 +58,14 @@ const useStyles = makeStyles({
         color: 'white !important',
         padding: '0 30px',
     },
+    paperStyle: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: '#1976d2 !important',
+        height: 75,
+        width: '100%',
+    }
 });
 
 const ButtonStyled = () => {
@@ -118,13 +126,19 @@ const TestPage = () => {
                     <>
                         <Grid container spacing={6} justifyContent='center'>
                             <Grid item xs={3} sm={6}> {/* sm은 한줄이되 비율이 6 */}
-                                <Paper style={{ background: '#1976d2', height: 75, width: '100%' }} />
+                                <Paper className={classes.paperStyle}>
+                                    Paper1
+                                </Paper>
                             </Grid>
                             <Grid item xs={3} sm={6}>
-                                <Paper style={{ background: '#1976d2', height: 75, width: '100%' }} />
+                                <Paper className={classes.paperStyle}>
+                                    Paper2
+                                </Paper>
                             </Grid>
                             <Grid item xs={3} sm={6}>
-                                <Paper style={{ background: '#1976d2', height: 75, width: '100%' }} />
+                                <Paper className={classes.paperStyle}>
+                                    Paper3
+                                </Paper>
                             </Grid>
                         </Grid>
                     </>
